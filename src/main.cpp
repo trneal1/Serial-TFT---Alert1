@@ -92,9 +92,9 @@ void tft_bl()
   }
 
   if (!strcasecmp(ptr, "on"))
-    digitalWrite(D3, HIGH);
+    digitalWrite(D0, HIGH);
   else
-    digitalWrite(D3, LOW);
+    digitalWrite(D0, LOW);
 }
 
 void tft_clr()
@@ -695,6 +695,9 @@ void setup(void)
   }
 
   // ##################################################################################
+
+  pinMode(D0, OUTPUT);
+  digitalWrite(D0, HIGH);
 
   SPI.setFrequency(40000000);
   tft.begin();
